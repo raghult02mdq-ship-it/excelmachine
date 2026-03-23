@@ -1,0 +1,480 @@
+/* ================================================
+   Header.css - Excel Machinaries India
+   ================================================ */
+
+:root {
+    --primary-color: #152315;
+    --accent-color: #ff6b35;
+}
+
+/* ── Topbar Styling ──────────────────────────── */
+.topbar {
+    padding: 0 !important;
+    background: #f8f9fa !important;
+    border-bottom: 1px solid #e9ecef !important;
+    height: 48px !important;
+    min-height: 48px !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Full-width inner container — no max-width, no side padding */
+.topbar .container {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+    height: 48px !important;
+    display: flex !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+}
+
+.topbar .row {
+    display: flex !important;
+    width: 100% !important;
+    margin: 0 !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+}
+
+/* ── Logo column — flush left ── */
+.topbar .col-lg-3 {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    padding: 0 0 0 0 !important;     /* no left padding either — true edge */
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Change this in Header.css */
+.site-logo img {
+    max-width: 130px !important; /* Reduced from 160px */
+    height: auto !important;     /* Let height scale naturally */
+    object-fit: contain !important;
+    display: block !important;
+}
+
+/* ── Right column — flush right ── */
+.topbar .col-lg-9 {
+    flex: 1 1 auto !important;
+    width: auto !important;
+    padding: 0 !important;           /* no right padding — true edge */
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+}
+
+/* ── Contact info row ── */
+.topbar-contact-info {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 0 !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.topbar-contact-info ul {
+    display: flex !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 6px !important;
+    border-right: none !important;
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+}
+
+.topbar-contact-info ul li a {
+    display: flex !important;
+    align-items: center !important;
+    text-decoration: none !important;
+    gap: 4px !important;
+}
+
+/* Green rounded-square icon box */
+.topbar-contact-info .icon-box {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #1eb01e !important;
+    border-radius: 4px !important;
+    width: 22px !important;
+    height: 22px !important;
+    margin-right: 2px !important;
+    flex-shrink: 0 !important;
+}
+
+.topbar-contact-info .icon-box img {
+    width: 12px !important;
+    height: 12px !important;
+    object-fit: contain !important;
+    filter: brightness(0) invert(1) !important;
+}
+
+.topbar-contact-info a p {
+    font-size: 12px !important;
+    color: #333 !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+    line-height: 1 !important;
+}
+
+/* ── Quote Button — matches btn-default from custom.css, scaled small ── */
+.topbar-qoute-btn {
+    margin-left: 30px !important;
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    height: 48px !important;
+}
+
+.topbar-qoute-btn .btn-default {
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    font-size: 10px !important;
+    font-weight: 600 !important;
+    line-height: 0.6em !important;
+    text-transform: capitalize !important;
+    color: #222222 !important;
+    background-color: #7BBB51 !important;   /* accent green */
+    border-radius: 6px !important;
+    padding: 2px 24px 2px 2px !important;   /* right padding for arrow */
+    border: none !important;
+    overflow: hidden !important;
+    transition: all 0.5s ease-in-out !important;
+    white-space: nowrap !important;
+    text-decoration: none !important;
+}
+
+/* Arrow pseudo-element */
+.topbar-qoute-btn .btn-default::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 50% !important;
+    right: 0 !important;
+    width: 8px !important;
+    height: 8px !important;
+    background-image: url('../images/arrow-white.svg') !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: 14px auto !important;
+    transform: translate(-8px, -50%) !important;
+    transition: all 0.4s ease-in-out !important;
+    z-index: 1 !important;
+}
+
+.topbar-qoute-btn .btn-default:hover::before {
+    transform: translate(-8px, -50%) rotate(45deg) !important;
+}
+
+/* Dark fill on hover */
+.topbar-qoute-btn .btn-default::after {
+    content: '' !important;
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: auto !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 0 !important;
+    height: 100% !important;
+    border-radius: 4px !important;
+    background: #222222 !important;
+    transition: all 0.4s ease-in-out !important;
+    z-index: 0 !important;
+}
+
+.topbar-qoute-btn .btn-default:hover::after {
+    width: 100% !important;
+    left: 0 !important;
+    right: auto !important;
+}
+
+/* White pill span — the text container */
+.topbar-qoute-btn .btn-default span {
+    position: relative !important;
+    display: inline-block !important;
+    font-size: 10px !important;
+    font-weight: 600 !important;
+    line-height: 1em !important;
+    background-color: #ffffff !important;
+    color: #222222 !important;
+    border-radius: 4px !important;
+    padding: 6px 8px !important;
+    overflow: hidden !important;
+    z-index: 1 !important;
+    transition: all 0.5s ease-in-out !important;
+    white-space: nowrap !important;
+}
+
+.topbar-qoute-btn .btn-default:hover span {
+    background-color: transparent !important;
+    color: #222222 !important;
+}
+
+.topbar-qoute-btn .btn-default span::after {
+    content: '' !important;
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: auto !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 0 !important;
+    height: 100% !important;
+    border-radius: 4px !important;
+    background: #7BBB51 !important;
+    transition: all 0.4s ease-in-out !important;
+    z-index: -1 !important;
+}
+
+.topbar-qoute-btn .btn-default:hover span::after {
+    width: 100% !important;
+    left: 0 !important;
+    right: auto !important;
+}
+
+/* ── Main Navbar ─────────────────────────────── */
+.main-header .navbar {
+    width: 100% !important;
+    padding: 10px 0 !important;
+    border-radius: 0 !important;
+    background: var(--primary-color) !important;
+    box-shadow: none !important;
+}
+
+body.leaf-theme .navbar {
+    background: linear-gradient(135deg, #152315 0%, #21311B 52%, #3F5C2F 100%) !important;
+    border-radius: 0 !important;
+}
+
+.main-header .navbar .container {
+    display: flex !important;
+    align-items: center !important;
+    padding: 0 40px !important;
+    max-width: 100% !important;
+}
+
+/* Menu links */
+.main-header .main-menu {
+    flex: 1 !important;
+    display: flex !important;
+    justify-content: flex-start !important;
+}
+
+.main-header .nav-link {
+    color: rgba(255,255,255,0.8) !important;
+    padding: 10px 20px !important;
+    font-weight: 500;
+}
+
+.main-header .nav-link:hover,
+.main-header .nav-link.active {
+    color: #fff !important;
+}
+
+/* ── LinkedIn icon — vertically aligned with quote button ── */
+.social-icon-wrapper {
+    margin-left: auto !important;
+    display: flex !important;
+    align-items: center !important;  /* vertically centred inside navbar */
+    height: 100% !important;
+}
+
+.linkedin-icon {
+    color: #fff;
+    font-size: 18px;
+    opacity: 0.8;
+    transition: 0.3s;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.linkedin-icon:hover {
+    opacity: 1;
+    color: #0077b5;
+}
+
+/* ── Sticky ── */
+.header-sticky.active {
+    position: fixed !important;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background: var(--primary-color) !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important;
+}
+
+/* ── Mobile ── */
+@media (max-width: 991px) {
+
+    /* Topbar: single row — logo left, contact info right */
+    .topbar {
+        height: auto !important;
+        min-height: 40px !important;
+        padding: 5px 12px !important;
+    }
+
+    .topbar .container {
+        height: auto !important;
+        padding: 0 !important;
+    }
+
+    .topbar .row {
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+
+    /* Show logo on mobile — left side */
+    .topbar .col-lg-3 {
+        display: flex !important;
+        align-items: center !important;
+        flex: 0 0 auto !important;
+        padding: 0 !important;
+    }
+
+    /* Force logo visible — overrides custom.css display:none on mobile */
+    .topbar .site-logo {
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    .topbar .site-logo a {
+        display: block !important;
+    }
+
+    .topbar .site-logo img {
+        display: block !important;
+        max-width: 80px !important;
+        height: 26px !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    /* Right side — contact + quote btn */
+    .topbar .col-lg-9 {
+        flex: 1 1 auto !important;
+        display: flex !important;
+        justify-content: flex-end !important;
+        align-items: center !important;
+        padding: 0 !important;
+    }
+
+    .topbar-contact-info {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        flex-wrap: nowrap !important;
+        gap: 0 !important;
+    }
+
+    /* Hide email on mobile — only show phone to save space */
+    .topbar-contact-info ul li:last-child {
+        display: none !important;
+    }
+
+    .topbar-contact-info ul {
+        gap: 0 !important;
+    }
+
+    .topbar-contact-info a p {
+        font-size: 11px !important;
+    }
+
+    .topbar-qoute-btn {
+        margin-left: 10px !important;
+        margin-right: 0 !important;
+    }
+
+    /* Navbar container padding */
+    .main-header .navbar .container {
+        padding: 0 12px !important;
+    }
+
+    /* Hide Bootstrap desktop collapse — SlickNav handles mobile */
+    .main-header .main-menu {
+        display: none !important;
+    }
+
+    /* Show SlickNav toggle and menu only */
+    .navbar-toggle {
+        display: block !important;
+    }
+
+    .responsive-menu {
+        display: block !important;
+        position: relative !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .topbar-contact-info .icon-box {
+        width: 18px !important;
+        height: 18px !important;
+    }
+
+    .topbar-contact-info .icon-box img {
+        width: 10px !important;
+        height: 10px !important;
+    }
+
+    .topbar-contact-info a p {
+        font-size: 10px !important;
+    }
+
+    .site-logo img {
+        max-width: 70px !important;
+        height: 22px !important;
+    }
+}
+
+/* ── video2 — exact same size as LMC8 image ── */
+.what-we-do-image figure {
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    display: block !important;
+    border-radius: 40px !important;
+    overflow: hidden !important;
+}
+
+.what-we-do-image video {
+    width: 100% !important;
+    height: auto !important;            /* let aspect-ratio drive height, not 100% */
+    aspect-ratio: 1 / 0.97 !important; /* same as LMC8 image in custom.css */
+    object-fit: cover !important;
+    display: block !important;
+}
+.site-logo img {
+    max-width: 160px !important;
+    height: 44px !important;
+    object-fit: contain !important;
+    display: block !important;
+}
+.topbar .site-logo img {
+    display: block !important;
+    max-width: 120px !important;
+    height: 38px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+.site-logo img {
+    max-width: 100px !important;
+    height: 32px !important;
+}
+.topbar {
+    height: auto !important;
+    min-height: 50px !important;  /* was 40px */
+    padding: 6px 12px !important; /* was 5px */
+}
+
+.topbar .container {
+    height: auto !important;
+    padding: 0 !important;
+}

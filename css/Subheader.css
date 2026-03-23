@@ -1,0 +1,161 @@
+/* ================================================
+   SubHeader.css - Excel Machinaries India
+   Page Header / Breadcrumb styles only.
+   Topbar + Navbar styles live in Header.css
+   ================================================ */
+
+/* ── Page Header Base ────────────────────────── */
+.page-header {
+    position: relative;
+    background: url('../images/page-header-bg.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 150px 0;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(270deg, rgba(0,0,0,0) 23.99%, rgba(0,0,0,0.8) 100%);
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* ── Page Header Box ─────────────────────────── */
+.page-header-box {
+    position: relative;
+    z-index: 2;
+}
+
+.page-header-box h1 {
+    color: #ffffff;
+    font-size: 70px;
+    font-weight: 300;
+    line-height: 1.2em;
+    letter-spacing: -0.01em;
+    margin-bottom: 5px;
+    cursor: none;
+}
+
+.page-header-box h1 span {
+    font-weight: 700;
+}
+
+/* ── Breadcrumb ──────────────────────────────── */
+.page-header-box ol {
+    margin: 0;
+    padding: 0;
+}
+
+.page-header-box ol li.breadcrumb-item {
+    text-transform: capitalize;
+    color: #ffffff;
+}
+
+.page-header-box ol li.breadcrumb-item a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.page-header-box ol li.breadcrumb-item a:hover {
+    color: var(--accent-color);
+}
+
+.page-header-box ol li.breadcrumb-item.active {
+    color: var(--accent-color);
+}
+
+.page-header-box ol .breadcrumb-item + .breadcrumb-item::before {
+    content: "\f111";
+    font-family: "FontAwesome";
+    font-size: 6px;
+    color: var(--accent-color);
+}
+
+/* ── Leaf Theme Variation ───────────────────── */
+body.leaf-theme .page-header {
+    position: relative;
+    overflow: hidden;
+    background-image: url('../images/leaf-accent.svg'), url('../images/page-header-bg.jpg');
+    background-repeat: no-repeat, no-repeat;
+    background-position: top -35px right -10px, center center;
+    background-size: 220px auto, cover;
+}
+
+body.leaf-theme .page-header::before {
+    background: linear-gradient(110deg, rgba(14,30,13,0.94) 0%, rgba(31,57,28,0.86) 52%, rgba(94,150,64,0.72) 100%);
+    opacity: 1;
+}
+
+body.leaf-theme .page-header::after {
+    content: '';
+    position: absolute;
+    left: -70px;
+    bottom: -90px;
+    width: 240px;
+    height: 240px;
+    background: url('../images/leaf-accent.svg') no-repeat center center;
+    background-size: contain;
+    transform: rotate(180deg);
+    opacity: 0.16;
+    pointer-events: none;
+    z-index: 1;
+}
+
+body.leaf-theme .page-header .container,
+body.leaf-theme .page-header-box {
+    position: relative;
+    z-index: 2;
+}
+
+body.leaf-theme .page-header-box h1 span {
+    color: #DFF1D1;
+}
+
+/* ── Responsive ─────────────────────────────── */
+@media only screen and (max-width: 1366px) {
+    .page-header { padding: 130px 0; }
+    .page-header-box h1 { font-size: 60px; }
+}
+
+@media only screen and (max-width: 1024px) {
+    .page-header { padding: 110px 0; }
+    .page-header-box h1 { font-size: 50px; }
+}
+
+@media only screen and (max-width: 991px) {
+    .page-header { padding: 90px 0; }
+    .page-header-box h1 { font-size: 42px; }
+
+    body.leaf-theme .page-header {
+        background-size: 150px auto, cover;
+    }
+
+    body.leaf-theme .page-header::after {
+        width: 180px;
+        height: 180px;
+        left: -50px;
+        bottom: -60px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .page-header { padding: 70px 0; }
+    .page-header-box h1 { font-size: 34px; }
+
+    .page-header-box .breadcrumb-item { font-size: 14px; }
+
+    body.leaf-theme .page-header::after {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .page-header { padding: 60px 0; }
+    .page-header-box h1 { font-size: 28px; }
+}
